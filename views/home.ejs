@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-theme="corporate">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should You... ?</title>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/themes.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="/public/style/stylesheet.css">
+</head>
+<body>
+  <span>
+    <div>
+        <h1 class="text-center text-5xl md:text-8xl font-bold text-primary">Should You... ?</h1>
+        <div class="container mx-auto">
+        <form class="form-control content-center" action="/result" method="POST">
+            <label class="label">
+              <label class="label-text">Should I </label>
+            </label> 
+            <div class="relative">
+              <% let arr = ["Eat some cake", "Drink some milk", "Write some code", "Make cookies", "Play Flappy Bird", "Watching Youtube", "Read more books"] // You can contribute here
+                let placeholder = arr[Math.floor(Math.random() * arr.length)] %>
+                <input type="text" name="question" placeholder="<%= placeholder %>" class="w-full text-black pr-16 input input-primary input-bordered"> 
+              <% if (error === true) { %>
+                <div class="alert alert-error mt-2">
+                  <div class="flex-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">    
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>                      
+                    </svg> 
+                    <label>Form is Empty!</label>
+                  </div>
+                </div>
+                              <% } %>
+              <button class="md:absolute md:right-0 top-0 rounded-l-none btn btn-md btn-outline btn-primary text-white" type="submit">Submit</button>
+            </div>
+          </form>
+      </div>         
+    </div>
+  </span>
+</body>
+</html>

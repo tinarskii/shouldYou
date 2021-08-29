@@ -1,0 +1,14 @@
+{
+  "name": "should-you",
+  "version": "1.0.0",
+  "description": "When you don't want to make decision by yourself...",
+  "main": "server.js",
+  "repository": "should-you",
+  "author": "Tinnaphat Somsang",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "prettier": "^2.3.2"
+  }
+}
