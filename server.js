@@ -26,11 +26,19 @@ app.post("/result", (req, res) => {
         })
         return;
     }
-    const answer = ['No, you shouldn\'t', 'Yes, you should']
-    const result = answer[Math.floor(Math.random() * answer.length)]
+    if(question.includes(" or ")) {
+        var question = question.split(" or ")
+        var results = question[Math.floor(Math.random() * question.length)];
+        var answers = 'You should'
+    } else {
+        var answer = ['No, you shouldn\'t', 'Yes, you should']
+        var result = answer[Math.floor(Math.random() * answer.length)]
+    }
     res.render("result", {
         question: question,
-        result: result
+        result: result,
+        results: results,
+        answers: answers,
     });
 });
 

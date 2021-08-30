@@ -17,14 +17,21 @@
     <div>
         <h1 class="text-center text-5xl md:text-8xl font-bold text-primary">Should You... ?</h1>
         <div class="container mx-auto mt-2">
-        <% if (result) {%>
+        <% if (result) { %>
         <% if(result.startsWith('No')) { %>
             <h1 class="mt-4 text-center text-7xl md:text-5xl font-bold text-error"><%= result %></h1>
-        <% } else { %>
+        <% } else if (result.startsWith('Yes')){ %>
             <h1 class="mt-4 text-center text-7xl md:text-5xl font-bold text-success"><%= result %></h1>
         <% } %>
         <% } %>
-        <h1 class="mt-4 text-center text-6xl md:text-4xl font-bold text-secondary"><%= question %></h1>
+        <% if (answers) { %>
+            <h1 class="mt-4 text-center text-7xl md:text-5xl font-bold text-success"><%= answers %></h1>
+        <% } %>
+        <% if (results) { %>
+        <h1 class="mt-4 text-center text-6xl md:text-4xl font-bold text-secondary"><%= results %></h1>
+        <% } else { %>
+            <h1 class="mt-4 text-center text-6xl md:text-4xl font-bold text-secondary"><%= question %></h1>
+        <% } %>
         <h3 class="mt-4 text-center"><a href="/" class="btn btn-outline-warning btn-lg">Return to Homepage</a></h3>
     </div>          
     </div>
